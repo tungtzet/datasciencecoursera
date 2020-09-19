@@ -26,7 +26,8 @@ best <- function(state, outcome) {
         column <- 23
     }
     
-    ## Extract dataframe w. corresponding state and only w. 3 outcomes
+    ## Extract dataframe w. corresponding state and outcome
+    ## then convert the outcome colunm to numeric
     subdf <- df[df$State == state, c(2,7,column)]
     subdf[, 3] <- sapply(subdf[, 3], as.numeric)
     
